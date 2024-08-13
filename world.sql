@@ -1,4 +1,4 @@
-CREATE DATABASE world;
+ CREATE DATABASE world;
 \connect world
 
 DROP TABLE IF EXISTS cities CASCADE;
