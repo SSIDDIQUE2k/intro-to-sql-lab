@@ -3,24 +3,27 @@
 -- Write SQL query here
 SELECT name FROM countries WHERE region = 'Southern Europe' ORDER BY population ASC LIMIT 1;
 
-
+ 
 
 -- Clue #2: Now that we're here, we have insight that Carmen was seen attending language classes in this country's officially recognized language. Check our databases and find out what language is spoken in this country, so we can call in a translator to work with you.
 
 -- Write SQL query here
-SELECT language FROM countries WHERE name = 'Andorra';
+SELECT language FROM countries WHERE name = 'Malta';
 
 
 -- Clue #3: We have new news on the classes Carmen attended – our gumshoes tell us she's moved on to a different country, a country where people speak only the language she was learning. Find out which nearby country speaks nothing but that language.
 
 -- Write SQL query here
-SELECT name FROM countries WHERE language = 'Catalan';
+SELECT name FROM countries WHERE language = 'Portuguese' AND name != 'Brazil';
+
 
 
 -- Clue #4: We're booking the first flight out – maybe we've actually got a chance to catch her this time. There are only two cities she could be flying to in the country. One is named the same as the country – that would be too obvious. We're following our gut on this one; find out what other city in that country she might be flying to.
 
 -- Write SQL query here
-SELECT name FROM cities WHERE country_code = 'AD' AND name != 'Andorra la Vella';
+SELECT name FROM cities WHERE country = 'Portugal' AND name != 'Portugal';
+
+
 
 
 
@@ -52,4 +55,4 @@ SELECT name FROM countries WHERE code = 'PE';
 
 -- We're counting on you, gumshoe. Find out where she's headed, send us the info, and we'll be sure to meet her at the gates with bells on.
 
-SELECT name FROM cities WHERE population = 91085;
+SELECT name FROM cities WHERE population = 90990;
